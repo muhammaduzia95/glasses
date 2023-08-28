@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>glasses</title>
+</head>
+<body>
+    <div class="logo">
+        <img src="./1.png" alt="">
+        <img src="./2.png" alt="">
+        <img src="./3.png" alt="">
+        <img src="./4.png" alt="">
+        <img src="./5.png" alt="">
+    </div>
+
+<script>
+        const logoImages = document.querySelectorAll('.logo img');
+        const logoContainer = document.querySelector('.logo');
+    
+        logoContainer.addEventListener('mousemove', (event) => {
+            const { clientX, clientY } = event;
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const moveX = (clientX - centerX) * 0.05;
+            const moveY = (clientY - centerY) * 0.05;
+    
+            logoImages.forEach((image, index) => {
+                const moveFactor = (index + 1) * 0.50;
+                image.style.transform = `translate(${moveX * moveFactor}px, ${moveY * moveFactor}px)`;
+            });
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
